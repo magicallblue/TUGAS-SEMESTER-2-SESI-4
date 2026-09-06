@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>SESI 3 SEMESTER 2</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.jpg" alt="logo" class="logo-img" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#"></a></li>
+                <li><a href="#browse">ABOUT</a></li>
+                <li><a href="#browse">MERCH</a></li>
+                <li><a href="#browse">GALLERY</a></li>
+            </ul>
+        </nav>
+        <button class="btn-cta" onclick="redirInstagram()">FOLLOW ME</button>
+    </header>
+    <div class="container1">
+        <div class="intro">
+            <p class="title animate__animated animate__fadeIn animate__slow">HELLO</p>
+            <p class="description animate__animated animate__fadeIn animate__slow">SLOWLY FOR DREAMING</p>
+            <img src="assets/sample 1.jpg" alt="profile"
+                class="img-foto animate__animated animate__fadeIn animate__slow" />
+        </div>
+    </div>
+    <div class="parallax">
+        <div class="about">
+            <p class="title">ME ANOTHER SIDE</p>
+            <p class="description">Calm in chaos</p>
+            <div class="mt-10">
+                <button class="btn-cta" onclick="redirWhatsapp()">start for chaos</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card" id="browse">
+                <div class="card-item">
+                    <img src="assets/icon 1.jpg" alt="icon 1" class="icon" />
+                    <p class=" card-title">Magicall blue</p>
+                    <p class="card-description">for business</p>
+                </div>
+                <div class="card-item">
+                    <img src="assets/icon 2.jpg" alt="icon 1" class="icon" />
+                    <p class="card-title">chaos of blue</p>
+                    <p class="card-description">for merch</p>
+                </div>
+                <div class="card-item">
+                    <img src="assets/icon 3.jpg" alt="icon 1" class="icon" />
+                    <p class="card-title">Dimention of blue</p>
+                    <p class="card-description">for Gallery</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; since 2026 reserve for you</p>
+    </footer>
+
+    <script>
+        function redirInstagram() {
+            window.location.href = "https://instagram.com/magicall_blue"
+        }
+        function redirWhatsapp() {
+            window.location.href = "https://wa.me/+6285315643571"
+        }
+        window.onload = function () {
+            window.scrollTo(0, 0); // paksa balik ke atas
+        };
+
+    </script>
+    <script>
+        const cards = document.querySelectorAll('.card-item');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        cards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.3}s`;
+            observer.observe(card);
+
+            // reset class setelah animasi selesai
+            card.addEventListener('animationend', () => {
+                card.classList.remove('animate__animated', 'animate__fadeInUp');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+    scroll-behavior: smooth;
+}
+
+header {
+    background: rgb(0, 0, 0);
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    margin-right: auto;
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.logo-img {
+    width: 200px;
+    height: 80px;
+    margin-left: 10px;
+}
+
+.btn-cta {
+    margin-right: 10px;
+    border: none;
+    font-size: 20px;
+    padding: 6px 12px;
+    background-color: cyan;
+    color: black;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    padding: 20px;
+
+}
+
+li {
+    list-style-type: none;
+    padding: 10px;
+}
+
+li a {
+    transition: all .5s ease 0s;
+    display: inline-block;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: cyan;
+    transform: rotate(2deg);
+}
+
+.container1 {
+ background-color: black;
+    max-height: 100vh;
+     margin: 0 auto;
+    padding: 70px 0;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 70px 0;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    color: white;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+.img-foto {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    max-width: 500px;
+}
+
+.parallax {
+  position: relative; /* penting supaya overlay bisa nempel */
+  background-image: url('assets/slide.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* overlay hitam transparan */
+.parallax::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* full cover */
+  background-color: rgba(0,0,0,0.6); /* hitam transparan */
+  z-index: 0;
+}
+
+/* konten di dalam parallax tetap di atas overlay */
+.parallax > * {
+  position: relative;
+  z-index: 1;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(0, 0, 0);
+    color: white;
+    padding: 40px;
+    height: 25vh;
+}
+
+.mt-10 {
+    margin-top: 20px;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-item {
+    text-align: center;
+    width: 25%;
+    min-height: 200px;
+    max-height: 300px;
+    background: black;
+    color: white;
+    padding: 24px;
+    box-shadow: 2px 2px 2px 2px rgba(76, 0, 255, 0.157);
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.card-description {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.icon {
+    width: 75px;
+    height: 75px;
+    margin: 10px;
+    padding: 4px;
+}
+
+footer {
+    font-family: Helvetica;
+    font-size: 18px;
+    padding: 20px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}   
+
+@media screen and (max-width: 500px) {
+    .card {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .card-item {
+        width: 100%;
+        opacity: 0.5;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .intro {
+        margin-top: 20px;
+    }
+
+    .img-foto {
+        padding: 0;
+    }
+
+    nav {
+        position: fixed;
+        justify-content: center;
+        bottom: 0;
+        width: 100%;
+        background: black;
+        z-index: 9;
+    }
+
+    footer {
+        margin-bottom: 70px;
+    }
+}
